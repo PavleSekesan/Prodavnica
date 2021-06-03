@@ -53,12 +53,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kasa.cs" />
     <Compile Include="Lager.cs" />
     <Compile Include="MesnePreradjevine.cs" />
     <Compile Include="MlecniProizvod.cs" />
     <Compile Include="Pecivo.cs" />
+    <Compile Include="Prodavnica.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Radnik.cs" />
+    <Compile Include="RadnoMesto.cs" />
     <Compile Include="SvezeMeso.cs" />
     <Compile Include="TrajniProizvod.cs" />
     <Compile Include="VocePovrce.cs" />
