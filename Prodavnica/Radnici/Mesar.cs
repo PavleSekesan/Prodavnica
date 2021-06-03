@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Prodavnica
 {
-    public class PomocnoOsoblje : Radnik
+    public class Mesar : Radnik
     {
+        public Mesar(string ime, string prezime) : base(ime, prezime) { }
     }
 }

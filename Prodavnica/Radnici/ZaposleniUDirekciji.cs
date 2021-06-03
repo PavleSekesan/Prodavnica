@@ -7,5 +7,6 @@ namespace Prodavnica
 {
     public class ZaposleniUDirekciji : Radnik
     {
+        public ZaposleniUDirekciji(string ime, string prezime) : base(ime, prezime) { }
     }
 }

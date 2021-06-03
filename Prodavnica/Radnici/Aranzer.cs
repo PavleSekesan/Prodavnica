@@ -7,5 +7,6 @@ namespace Prodavnica
 {
     public class Aranzer : Radnik
     {
+        public Aranzer(string ime, string prezime) : base(ime, prezime) { }
     }
 }

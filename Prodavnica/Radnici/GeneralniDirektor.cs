@@ -7,5 +7,6 @@ namespace Prodavnica
 {
     public class GeneralniDirektor : Radnik
     {
+        public GeneralniDirektor(string ime, string prezime) : base(ime, prezime) { }
     }
 }

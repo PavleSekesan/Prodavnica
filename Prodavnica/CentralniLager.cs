@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Prodavnica
 {
-    public class Pekar : Radnik
+    public class CentralniLager : Lager
     {
     }
 }
