@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Prodavnica
 {
-    public class Kasa
+    public class Racun
     {
-        private int id;
-        private List<Racun> racuni;
+        private List<Artikal> artikli;
+        private DateTime datum;
+        private Kasa kasa;
         private Kasir kasir;
     }
 }

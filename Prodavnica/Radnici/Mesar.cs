@@ -5,10 +5,8 @@ using System.Text;
 
 namespace Prodavnica
 {
-    public class Kasa
+    public class Mesar : Radnik
     {
-        private int id;
-        private List<Racun> racuni;
-        private Kasir kasir;
+        public Mesar(string ime, string prezime) : base(ime, prezime) { }
     }
 }

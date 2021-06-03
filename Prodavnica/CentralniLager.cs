@@ -5,10 +5,7 @@ using System.Text;
 
 namespace Prodavnica
 {
-    public class Kasa
+    public class CentralniLager : Lager
     {
-        private int id;
-        private List<Racun> racuni;
-        private Kasir kasir;
     }
 }
