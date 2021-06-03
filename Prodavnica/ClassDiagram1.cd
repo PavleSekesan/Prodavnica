@@ -63,5 +63,96 @@
       <FileName>ZaledjeniProgram.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Prodavnica.Radnik" Collapsed="true">
+    <Position X="14.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Radnik.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.Kasir">
+    <Position X="9.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Kasir.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.Aranzer">
+    <Position X="16.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Aranzer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.Mesar">
+    <Position X="20.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mesar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.Pekar">
+    <Position X="22" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pekar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.MenadzerProdavnice">
+    <Position X="15" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MenadzerProdavnice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.MenadzerPoslovneJedinice">
+    <Position X="18.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MenadzerPoslovneJedinice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.PomocnoOsoblje">
+    <Position X="6.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PomocnoOsoblje.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.DirektorPoslovneJedinice">
+    <Position X="13.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DirektorPoslovneJedinice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.ZaposleniUDirekciji">
+    <Position X="8" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ZaposleniUDirekciji.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.GeneralniDirektor">
+    <Position X="11.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneralniDirektor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.Racun">
+    <Position X="1.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAIAAAAAAABAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Racun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.Kasa">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Kasa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -46,23 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aranzer.cs" />
     <Compile Include="Artikal.cs" />
+    <Compile Include="DirektorPoslovneJedinice.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralniDirektor.cs" />
+    <Compile Include="Kasa.cs" />
+    <Compile Include="Kasir.cs" />
     <Compile Include="Lager.cs" />
+    <Compile Include="MenadzerPoslovneJedinice.cs" />
+    <Compile Include="MenadzerProdavnice.cs" />
+    <Compile Include="Mesar.cs" />
     <Compile Include="MesnePreradjevine.cs" />
     <Compile Include="MlecniProizvod.cs" />
     <Compile Include="Pecivo.cs" />
+    <Compile Include="Pekar.cs" />
+    <Compile Include="PomocnoOsoblje.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Racun.cs" />
+    <Compile Include="Radnik.cs" />
     <Compile Include="SvezeMeso.cs" />
     <Compile Include="TrajniProizvod.cs" />
     <Compile Include="VocePovrce.cs" />
     <Compile Include="ZaledjeniProgram.cs" />
+    <Compile Include="ZaposleniUDirekciji.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
