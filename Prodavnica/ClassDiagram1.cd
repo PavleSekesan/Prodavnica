@@ -7,8 +7,8 @@
       <FileName>Artikal.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Prodavnica.Lager">
-    <Position X="25" Y="1.25" Width="1.5" />
+  <Class Name="Prodavnica.Lager" Collapsed="true">
+    <Position X="23.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQQAAA=</HashCode>
       <FileName>Lager.cs</FileName>
@@ -159,6 +159,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CentralniLager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.Prodavnica">
+    <Position X="23.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAIAAACAAAAAAAACAAAA=</HashCode>
+      <FileName>Prodavnica.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
