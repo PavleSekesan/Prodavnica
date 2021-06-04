@@ -7,33 +7,64 @@ namespace Prodavnica
 {
     public abstract class Artikal
     {
-        public int Cena
+
+        protected double cena;
+        protected double popust;
+        protected string naziv;
+        protected string ambalaza;
+        protected DateTime rokTrajanja;
+
+        public Artikal(int cena, string naziv, string ambalaza, DateTime rokTrajanja)
         {
-            get => default;
+            this.cena = cena;
+            this.naziv = naziv;
+            this.ambalaza = ambalaza;
+            this.rokTrajanja = rokTrajanja;
+        }
+
+        // Ako artiklu fali jos $granica dana do isteka roka, vraca true
+        protected bool PredIstekRoka()
+        {
+            const int granica = 10;
+            int uslov = DateTime.Now.AddDays(granica).CompareTo(rokTrajanja);
+            if (uslov >= 0)
+                return true;
+            else
+                return false;
+        }
+        public double Cena
+        {
+            get
+            {
+                if (PredIstekRoka())
+                    return cena * popust;
+                else
+                    return cena;
+            }
             set
             {
             }
         }
 
-        public int Naziv
+        public string Naziv
         {
-            get => default;
+            get => naziv;
             set
             {
             }
         }
 
-        public int Ambalaza
+        public string Ambalaza
         {
-            get => default;
+            get => ambalaza;
             set
             {
             }
         }
 
-        public int RokTrajanja
+        public DateTime RokTrajanja
         {
-            get => default;
+            get => rokTrajanja;
             set
             {
             }

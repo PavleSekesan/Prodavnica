@@ -60,7 +60,8 @@
     <Compile Include="Kasa.cs" />
     <Compile Include="Radnici\Kasir.cs" />
     <Compile Include="Lager.cs" />
-	<Compile Include="Prodavnica.cs" />
+    <Compile Include="Prodavnica.cs" />
+    <Compile Include="RadnoMesto.cs" />
     <Compile Include="Radnici\MenadzerPoslovneJedinice.cs" />
     <Compile Include="Radnici\MenadzerProdavnice.cs" />
     <Compile Include="Radnici\Mesar.cs" />
