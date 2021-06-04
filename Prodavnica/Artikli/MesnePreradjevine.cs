@@ -7,5 +7,6 @@ namespace Prodavnica
 {
     public class MesnePreradjevine : Artikal
     {
+        public override 
     }
 }

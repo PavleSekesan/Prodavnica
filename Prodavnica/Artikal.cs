@@ -7,14 +7,13 @@ namespace Prodavnica
 {
     public abstract class Artikal
     {
-
         protected double cena;
         protected double popust;
         protected string naziv;
         protected string ambalaza;
         protected DateTime rokTrajanja;
 
-        public Artikal(int cena, string naziv, string ambalaza, DateTime rokTrajanja)
+        public Artikal(double cena, string naziv, string ambalaza, DateTime rokTrajanja)
         {
             this.cena = cena;
             this.naziv = naziv;
