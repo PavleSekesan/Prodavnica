@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Kompanija.cs" />
+    <Compile Include="Prodavnice\MalaProdavnica.cs" />
     <Compile Include="PoslovnaJedinica.cs" />
+    <Compile Include="Prodavnice\ProdavnicaFactory.cs" />
     <Compile Include="Radnici\Aranzer.cs" />
     <Compile Include="Artikal.cs" />
     <Compile Include="CentralniLager.cs" />
@@ -81,6 +83,9 @@
     <Compile Include="Artikli\VocePovrce.cs" />
     <Compile Include="Artikli\ZaledjeniProgram.cs" />
     <Compile Include="Radnici\ZaposleniUDirekciji.cs" />
+    <Compile Include="Prodavnice\SrednjaProdavnica.cs" />
+    <Compile Include="Prodavnice\Supermarket.cs" />
+    <Compile Include="Prodavnice\VelikaProdavnica.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,5 +112,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
