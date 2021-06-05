@@ -7,7 +7,7 @@ namespace Prodavnica
 {
     public class SvezeMeso : Artikal
     {
-        public SvezeMeso(double cena, string naziv, string ambalaza, DateTime rokTrajanja) : base(cena, naziv, ambalaza, rokTrajanja)
+        public SvezeMeso(double cena, string naziv, string ambalaza, string jedinicaProdaje, DateTime rokTrajanja) : base(cena, naziv, ambalaza, jedinicaProdaje, rokTrajanja)
         {
             this.popustPredIstekRoka = 0.3;
         }

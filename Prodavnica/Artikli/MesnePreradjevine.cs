@@ -7,7 +7,7 @@ namespace Prodavnica
 {
     public class MesnePreradjevine : Artikal
     {
-        public MesnePreradjevine(double cena, string naziv, string ambalaza, DateTime rokTrajanja) : base(cena, naziv, ambalaza, rokTrajanja)
+        public MesnePreradjevine(double cena, string naziv, string ambalaza, string jedinicaProdaje, DateTime rokTrajanja) : base(cena, naziv, ambalaza, jedinicaProdaje, rokTrajanja)
         {
             this.popustPredIstekRoka = 0.5;
         }

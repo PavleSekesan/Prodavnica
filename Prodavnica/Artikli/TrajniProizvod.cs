@@ -7,9 +7,11 @@ namespace Prodavnica
 {
     public class TrajniProizvod : Artikal
     {
-        public TrajniProizvod(double cena, string naziv, string ambalaza, DateTime rokTrajanja) : base(cena, naziv, ambalaza, rokTrajanja)
+        private string opis;
+        public TrajniProizvod(double cena, string naziv, string ambalaza, string jedinicaProdaje, DateTime rokTrajanja, string opis) : base(cena, naziv, ambalaza, jedinicaProdaje, rokTrajanja)
         {
             this.popustPredIstekRoka = 0.3;
+            this.opis = opis;
         }
     }
 }
