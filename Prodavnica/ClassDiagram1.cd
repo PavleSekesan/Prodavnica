@@ -3,7 +3,7 @@
   <Class Name="Prodavnica.Artikal" Collapsed="true">
     <Position X="14" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAARAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAATAAAAAIAAACAAAAAmAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>Artikal.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -143,14 +143,14 @@
   <Class Name="Prodavnica.Racun">
     <Position X="1.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAIAAAAAAABAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAIAAAAAAABAAAAAAABAAAAAgAAAAQAAAI=</HashCode>
       <FileName>Racun.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Prodavnica.Kasa">
     <Position X="3.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>JAAAAAAAKUAAAAAIAgAABAAAAAAAAAAAhAAABgAAAII=</HashCode>
       <FileName>Kasa.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -164,8 +164,22 @@
   <Class Name="Prodavnica.Prodavnica">
     <Position X="23.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAIAAACAAAAAAAACAAAA=</HashCode>
+      <HashCode>AAAAABBAAIkAAAAAAgAAAAEAAIAAACAAAAAABACAAAA=</HashCode>
       <FileName>Prodavnica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.PoslovnaJedinica">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEIAAAAAAAAAAAAAgAAAACAAAAAAAAAAIAA=</HashCode>
+      <FileName>PoslovnaJedinica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prodavnica.Kompanija">
+    <Position X="28.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAQAABAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Kompanija.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

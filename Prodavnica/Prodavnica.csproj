@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Kompanija.cs" />
+    <Compile Include="PoslovnaJedinica.cs" />
     <Compile Include="Radnici\Aranzer.cs" />
     <Compile Include="Artikal.cs" />
     <Compile Include="CentralniLager.cs" />
