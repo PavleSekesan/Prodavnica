@@ -27,5 +27,9 @@ namespace Prodavnica
             this.ime = ime;
             this.prezime = prezime;
         }
+        public override string ToString()
+        {
+            return ime + " " + prezime;
+        }
     }
 }

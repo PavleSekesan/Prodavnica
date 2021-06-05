@@ -20,5 +20,14 @@ namespace Prodavnica
         {
             artikalKolicina = new Dictionary<Artikal, int>();
         }
+        public override string ToString()
+        {
+            StringBuilder sviArtikli = new StringBuilder();
+            foreach (var artikal in artikalKolicina)
+            {
+                sviArtikli.Append(artikal.Key + ": " + artikal.Value + Environment.NewLine);
+            }
+            return sviArtikli.ToString();
+        }
     }
 }
