@@ -13,9 +13,14 @@ namespace Prodavnica
         private List<RadnoMesto> radnaMesta;
         private List<Kasa> kase;
         private Lager lager;
+        private PoslovnaJedinica poslovnaJedinica;
         public Lager LagerUProdavnici
         {
             get => lager;
+        }
+        public List<RadnoMesto> RadnaMesta
+        {
+            get => radnaMesta;
         }
         /*
          
@@ -54,8 +59,9 @@ namespace Prodavnica
             for (int i = 0; i < brojKasa; i++)
                 kase.Add(new Kasa(this));
         }
-        public Prodavnica(double povrsina, string adresa)
+        public Prodavnica(double povrsina, string adresa, PoslovnaJedinica poslovnaJedinica)
         {
+            this.poslovnaJedinica = poslovnaJedinica;
             this.adresa = adresa;
             this.povrsina = povrsina;
             lager = new Lager();
@@ -138,7 +144,10 @@ namespace Prodavnica
         }
         public void ZatvoriProdavnicu()
         {
-            throw new NotImplementedException();
+            foreach (var artikal in lager.SviArtikli)
+            {
+                poslovnaJedinica.CentralniLager.UvecajStanje(artikal.Key, artikal.Value);
+            }
         }
 
         public override string ToString()

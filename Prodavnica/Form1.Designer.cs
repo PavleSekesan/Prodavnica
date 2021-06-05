@@ -29,32 +29,33 @@ namespace Prodavnica
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.poslvneJediniceLB = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.prodavniceLB = new System.Windows.Forms.ListBox();
+            this.centralniLagerLB = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.listBox6 = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.lagerProdavnicaLB = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dodajProdavnicu = new System.Windows.Forms.Button();
+            this.dodajPoslovnuJedinicu = new System.Windows.Forms.Button();
+            this.zaposleniKompanijaLV = new System.Windows.Forms.ListView();
+            this.zaposleniPoslovnaJedinicaLV = new System.Windows.Forms.ListView();
+            this.zaposleniProdavnicaLV = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // listBox1
+            // poslvneJediniceLB
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 43);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(141, 173);
-            this.listBox1.TabIndex = 0;
+            this.poslvneJediniceLB.FormattingEnabled = true;
+            this.poslvneJediniceLB.Location = new System.Drawing.Point(12, 43);
+            this.poslvneJediniceLB.Name = "poslvneJediniceLB";
+            this.poslvneJediniceLB.Size = new System.Drawing.Size(228, 173);
+            this.poslvneJediniceLB.TabIndex = 0;
+            this.poslvneJediniceLB.SelectedIndexChanged += new System.EventHandler(this.poslvneJediniceLB_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -68,7 +69,7 @@ namespace Prodavnica
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 17);
+            this.label2.Location = new System.Drawing.Point(9, 244);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 3;
@@ -77,147 +78,157 @@ namespace Prodavnica
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(226, 444);
+            this.label3.Location = new System.Drawing.Point(728, 245);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Centralni lager";
             // 
-            // listBox2
+            // prodavniceLB
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(232, 43);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(185, 173);
-            this.listBox2.TabIndex = 5;
+            this.prodavniceLB.FormattingEnabled = true;
+            this.prodavniceLB.Location = new System.Drawing.Point(12, 270);
+            this.prodavniceLB.Name = "prodavniceLB";
+            this.prodavniceLB.Size = new System.Drawing.Size(185, 173);
+            this.prodavniceLB.TabIndex = 5;
+            this.prodavniceLB.SelectedIndexChanged += new System.EventHandler(this.prodavniceLB_SelectedIndexChanged);
             // 
-            // listBox3
+            // centralniLagerLB
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(229, 469);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(185, 173);
-            this.listBox3.TabIndex = 6;
+            this.centralniLagerLB.FormattingEnabled = true;
+            this.centralniLagerLB.Location = new System.Drawing.Point(731, 270);
+            this.centralniLagerLB.Name = "centralniLagerLB";
+            this.centralniLagerLB.Size = new System.Drawing.Size(391, 173);
+            this.centralniLagerLB.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(226, 232);
+            this.label4.Location = new System.Drawing.Point(274, 251);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(145, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Zaposleni";
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(229, 251);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(185, 173);
-            this.listBox4.TabIndex = 8;
-            // 
-            // listBox5
-            // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(12, 251);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(141, 173);
-            this.listBox5.TabIndex = 10;
+            this.label4.Text = "Zaposleni u poslovnoj jedinici";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 232);
+            this.label5.Location = new System.Drawing.Point(276, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(109, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Zaposleni";
+            this.label5.Text = "Zaposleni u kompaniji";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(583, 17);
+            this.label6.Location = new System.Drawing.Point(12, 474);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Odabrana prodavnica";
             // 
-            // listBox6
-            // 
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Location = new System.Drawing.Point(586, 251);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(192, 173);
-            this.listBox6.TabIndex = 15;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(583, 232);
+            this.label7.Location = new System.Drawing.Point(274, 464);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.Size = new System.Drawing.Size(114, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Zaposleni";
+            this.label7.Text = "Zaposleni u prodavnici";
             // 
-            // listBox7
+            // lagerProdavnicaLB
             // 
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.Location = new System.Drawing.Point(586, 469);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(192, 173);
-            this.listBox7.TabIndex = 13;
+            this.lagerProdavnicaLB.FormattingEnabled = true;
+            this.lagerProdavnicaLB.Location = new System.Drawing.Point(731, 483);
+            this.lagerProdavnicaLB.Name = "lagerProdavnicaLB";
+            this.lagerProdavnicaLB.Size = new System.Drawing.Size(391, 173);
+            this.lagerProdavnicaLB.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(583, 444);
+            this.label8.Location = new System.Drawing.Point(728, 458);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 12;
             this.label8.Text = "Lager u prodavnici";
             // 
-            // button1
+            // dodajProdavnicu
             // 
-            this.button1.Location = new System.Drawing.Point(296, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dodajProdavnicu.Location = new System.Drawing.Point(76, 239);
+            this.dodajProdavnicu.Name = "dodajProdavnicu";
+            this.dodajProdavnicu.Size = new System.Drawing.Size(23, 23);
+            this.dodajProdavnicu.TabIndex = 16;
+            this.dodajProdavnicu.Text = "+";
+            this.dodajProdavnicu.UseVisualStyleBackColor = true;
+            this.dodajProdavnicu.Click += new System.EventHandler(this.dodajProdavnicu_Click);
             // 
-            // button2
+            // dodajPoslovnuJedinicu
             // 
-            this.button2.Location = new System.Drawing.Point(108, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(23, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dodajPoslovnuJedinicu.Location = new System.Drawing.Point(108, 12);
+            this.dodajPoslovnuJedinicu.Name = "dodajPoslovnuJedinicu";
+            this.dodajPoslovnuJedinicu.Size = new System.Drawing.Size(23, 23);
+            this.dodajPoslovnuJedinicu.TabIndex = 17;
+            this.dodajPoslovnuJedinicu.Text = "+";
+            this.dodajPoslovnuJedinicu.UseVisualStyleBackColor = true;
+            this.dodajPoslovnuJedinicu.Click += new System.EventHandler(this.dodajPoslovnuJedinicu_Click);
+            // 
+            // zaposleniKompanijaLV
+            // 
+            this.zaposleniKompanijaLV.HideSelection = false;
+            this.zaposleniKompanijaLV.Location = new System.Drawing.Point(279, 43);
+            this.zaposleniKompanijaLV.Name = "zaposleniKompanijaLV";
+            this.zaposleniKompanijaLV.Size = new System.Drawing.Size(408, 173);
+            this.zaposleniKompanijaLV.TabIndex = 18;
+            this.zaposleniKompanijaLV.UseCompatibleStateImageBehavior = false;
+            this.zaposleniKompanijaLV.View = System.Windows.Forms.View.Details;
+            // 
+            // zaposleniPoslovnaJedinicaLV
+            // 
+            this.zaposleniPoslovnaJedinicaLV.HideSelection = false;
+            this.zaposleniPoslovnaJedinicaLV.Location = new System.Drawing.Point(279, 270);
+            this.zaposleniPoslovnaJedinicaLV.Name = "zaposleniPoslovnaJedinicaLV";
+            this.zaposleniPoslovnaJedinicaLV.Size = new System.Drawing.Size(408, 173);
+            this.zaposleniPoslovnaJedinicaLV.TabIndex = 19;
+            this.zaposleniPoslovnaJedinicaLV.UseCompatibleStateImageBehavior = false;
+            this.zaposleniPoslovnaJedinicaLV.View = System.Windows.Forms.View.Details;
+            // 
+            // zaposleniProdavnicaLV
+            // 
+            this.zaposleniProdavnicaLV.HideSelection = false;
+            this.zaposleniProdavnicaLV.Location = new System.Drawing.Point(277, 483);
+            this.zaposleniProdavnicaLV.Name = "zaposleniProdavnicaLV";
+            this.zaposleniProdavnicaLV.Size = new System.Drawing.Size(408, 173);
+            this.zaposleniProdavnicaLV.TabIndex = 20;
+            this.zaposleniProdavnicaLV.UseCompatibleStateImageBehavior = false;
+            this.zaposleniProdavnicaLV.View = System.Windows.Forms.View.Details;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 696);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox6);
+            this.ClientSize = new System.Drawing.Size(1446, 696);
+            this.Controls.Add(this.zaposleniProdavnicaLV);
+            this.Controls.Add(this.zaposleniPoslovnaJedinicaLV);
+            this.Controls.Add(this.zaposleniKompanijaLV);
+            this.Controls.Add(this.dodajPoslovnuJedinicu);
+            this.Controls.Add(this.dodajProdavnicu);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.listBox7);
+            this.Controls.Add(this.lagerProdavnicaLB);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.listBox5);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.listBox4);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.centralniLagerLB);
+            this.Controls.Add(this.prodavniceLB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.poslvneJediniceLB);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,23 +236,23 @@ namespace Prodavnica
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox poslvneJediniceLB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox prodavniceLB;
+        private System.Windows.Forms.ListBox centralniLagerLB;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox listBox6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox listBox7;
+        private System.Windows.Forms.ListBox lagerProdavnicaLB;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button dodajProdavnicu;
+        private System.Windows.Forms.Button dodajPoslovnuJedinicu;
+        private System.Windows.Forms.ListView zaposleniKompanijaLV;
+        private System.Windows.Forms.ListView zaposleniPoslovnaJedinicaLV;
+        private System.Windows.Forms.ListView zaposleniProdavnicaLV;
     }
 }
 
