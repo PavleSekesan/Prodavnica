@@ -16,5 +16,9 @@ namespace Prodavnica
         {
             artikalKolicina[artikal] -= promena;
         }
+        public Lager()
+        {
+            artikalKolicina = new Dictionary<Artikal, int>();
+        }
     }
 }
