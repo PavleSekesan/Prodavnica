@@ -9,7 +9,7 @@ namespace Prodavnica
     {
         public MesnePreradjevine(double cena, string naziv, string ambalaza, DateTime rokTrajanja) : base(cena, naziv, ambalaza, rokTrajanja)
         {
-            this.popust = 0.5;
+            this.popustPredIstekRoka = 0.5;
         }
     }
 }
