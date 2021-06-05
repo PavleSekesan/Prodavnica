@@ -7,6 +7,7 @@ namespace Prodavnica
 {
     public class Prodavnica
     {
+        private string adresa;
         private double povrsina;
         private List<Type> proizvodiVanPonude;
         private List<RadnoMesto> radnaMesta;
@@ -53,9 +54,11 @@ namespace Prodavnica
             for (int i = 0; i < brojKasa; i++)
                 kase.Add(new Kasa(this));
         }
-        public Prodavnica(double povrsina)
+        public Prodavnica(double povrsina, string adresa)
         {
+            this.adresa = adresa;
             this.povrsina = povrsina;
+            lager = new Lager();
             proizvodiVanPonude = new List<Type>();
 
             var radnaMestaSrednjeProdavnice = new List<RadnoMesto>();
@@ -136,6 +139,11 @@ namespace Prodavnica
         public void ZatvoriProdavnicu()
         {
             throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return adresa;
         }
     }
 }
