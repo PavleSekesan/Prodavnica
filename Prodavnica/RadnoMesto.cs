@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prodavnica
 {
-    class RadnoMesto
+    public class RadnoMesto
     {
         private Type ulogaRadnika;
         private Radnik radnik;
