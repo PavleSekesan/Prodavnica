@@ -20,6 +20,14 @@ namespace Prodavnica
             else
                 artikalKolicina[artikal] = 0;
         }
+
+        public void DodajGrupuArtikala(List<Artikal> artikli)
+        {
+            foreach(Artikal a in artikli)
+            {
+                artikalKolicina[a] = 0;
+            }
+        }
         public void UmanjiStanje(Artikal artikal, int promena = 1)
         {
             if (artikalKolicina[artikal] < promena)
@@ -32,7 +40,6 @@ namespace Prodavnica
         {
             if (!artikalKolicina.ContainsKey(artikal))
                 DodajArtikal(artikal);
-            
             artikalKolicina[artikal] += promena;
         }
         public Lager()

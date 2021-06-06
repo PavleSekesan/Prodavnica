@@ -8,16 +8,20 @@ namespace Prodavnica
     public abstract class Artikal
     {
         protected double cena;
+        protected double popustPredIstekRoka;
         protected double popust;
         protected string naziv;
         protected string ambalaza;
+        protected string jedinicaProdaje;
         protected DateTime rokTrajanja;
 
-        public Artikal(double cena, string naziv, string ambalaza, DateTime rokTrajanja)
+        public Artikal(double cena, string naziv, string ambalaza, string jedinicaProdaje, DateTime rokTrajanja)
         {
             this.cena = cena;
+            popust = 0;
             this.naziv = naziv;
             this.ambalaza = ambalaza;
+            this.jedinicaProdaje = jedinicaProdaje;
             this.rokTrajanja = rokTrajanja;
         }
 
@@ -31,17 +35,27 @@ namespace Prodavnica
             else
                 return false;
         }
+
+        public double Popust
+        {
+            get => popust;
+            set
+            {
+                popust = value;
+            }
+        }
         public double Cena
         {
             get
             {
+                double ret = cena * (1 - popust);
                 if (PredIstekRoka())
-                    return cena * popust;
-                else
-                    return cena;
+                    ret *= (1 - popustPredIstekRoka);
+                return ret;
             }
             set
             {
+                cena = value;
             }
         }
 
@@ -50,6 +64,7 @@ namespace Prodavnica
             get => naziv;
             set
             {
+                naziv = value;
             }
         }
 
@@ -58,15 +73,13 @@ namespace Prodavnica
             get => ambalaza;
             set
             {
+                ambalaza = value;
             }
         }
 
         public DateTime RokTrajanja
         {
             get => rokTrajanja;
-            set
-            {
-            }
         }
     }
 }

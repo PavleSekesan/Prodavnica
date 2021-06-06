@@ -7,13 +7,14 @@ namespace Prodavnica
 {
     public class Prodavnica
     {
-        private string adresa;
-        private double povrsina;
-        private List<Type> proizvodiVanPonude;
-        private List<RadnoMesto> radnaMesta;
-        private List<Kasa> kase;
-        private Lager lager;
-        private PoslovnaJedinica poslovnaJedinica;
+        protected PoslovnaJedinica poslovnaJedinica;
+        protected string adresa;
+        protected double povrsina;
+        protected List<Type> proizvodiVanPonude;
+        protected List<RadnoMesto> radnaMesta;
+        protected List<Kasa> kase;
+        protected Lager lager;
+
         public Lager LagerUProdavnici
         {
             get => lager;
@@ -44,7 +45,7 @@ namespace Prodavnica
         Roba kojoj je istekao rok trajanja vraća se nazad u centralni lager.  
 
          */
-        private void DodajRadnaMesta(Dictionary<Type, int> zaDodavanje, ref List<RadnoMesto> radnaMesta)
+        protected void DodajRadnaMesta(Dictionary<Type, int> zaDodavanje, ref List<RadnoMesto> radnaMesta)
         {
             foreach (var kvp in zaDodavanje)
             {
@@ -54,7 +55,7 @@ namespace Prodavnica
                 }
             }
         }
-        private void DodajKase(int brojKasa, ref List<Kasa> kase)
+        protected void DodajKase(int brojKasa, ref List<Kasa> kase)
         {
             for (int i = 0; i < brojKasa; i++)
                 kase.Add(new Kasa(this));
@@ -66,59 +67,6 @@ namespace Prodavnica
             this.povrsina = povrsina;
             lager = new Lager();
             proizvodiVanPonude = new List<Type>();
-
-            var radnaMestaSrednjeProdavnice = new List<RadnoMesto>();
-            DodajRadnaMesta(new Dictionary<Type, int>(){
-                { typeof(MenadzerProdavnice), 2 },
-                { typeof(Kasir), 4 },
-                { typeof(Aranzer), 4 },
-                { typeof(Mesar), 4 },
-                { typeof(Pekar), 2 },
-                { typeof(PomocnoOsoblje), 2 }
-            }, ref radnaMestaSrednjeProdavnice);
-
-            Dictionary<Type, int> svaRadnaMesta = new Dictionary<Type, int>()
-            {
-                { typeof(MenadzerProdavnice), 1 },
-                { typeof(Kasir), 1 },
-                { typeof(Aranzer), 1 },
-                { typeof(Mesar), 1 },
-                { typeof(Pekar), 1 },
-                { typeof(PomocnoOsoblje), 1 }
-            };
-
-            if (povrsina <= 70)
-            {
-                proizvodiVanPonude = new List<Type>() { typeof(SvezeMeso), typeof(MesnePreradjevine), typeof(Pecivo)};
-
-                radnaMesta = new List<RadnoMesto>();
-                DodajRadnaMesta(new Dictionary<Type, int>(){
-                    { typeof(MenadzerProdavnice), 1 },
-                    { typeof(Kasir), 2 },
-                    { typeof(Aranzer), 2 } 
-                }, ref radnaMesta);
-
-                kase = new List<Kasa>();
-                DodajKase(1, ref kase);
-            }
-            else if (povrsina > 70 && povrsina <= 200)
-            {
-                proizvodiVanPonude = new List<Type>() { typeof(Pecivo) };
-                radnaMesta = radnaMestaSrednjeProdavnice;
-                kase = new List<Kasa>();
-                DodajKase(2, ref kase);
-            }
-            else
-            {
-                kase = new List<Kasa>();
-                DodajKase(2, ref kase);
-                radnaMesta = radnaMestaSrednjeProdavnice;
-                for (int i = 250; i <= povrsina; i+=50)
-                {
-                    DodajKase(1, ref kase);
-                    DodajRadnaMesta(svaRadnaMesta, ref radnaMesta);
-                }
-            }
         }
         public bool ImaMesto(Radnik radnik)
         {

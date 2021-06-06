@@ -12,6 +12,32 @@ namespace Prodavnica
         private Kasa kasa;
         private Kasir kasir;
         private Prodavnica prodavnica;
+
+        public List<Artikal> Artikli
+        {
+            get => artikli;
+        }
+
+        public DateTime Datum
+        {
+            get => datum;
+        }
+
+        public Kasa Kasa
+        {
+            get => kasa;
+        }
+
+        public Kasir Kasir
+        {
+            get => kasir;
+        }
+
+        public Prodavnica Prodavnica
+        {
+            get => prodavnica;
+        }
+
         /*
          Račun – predstavlja skup artikala koje je kupac kupio. Pored artikala, 
         svaki račun čuva i datum, broj kase i kasira koji je otkucao račun.
