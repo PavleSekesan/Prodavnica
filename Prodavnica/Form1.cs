@@ -93,7 +93,9 @@ namespace Prodavnica
             var artikal = new ZaledjeniProgram(2345, "jaje", "TVRDO", DateTime.Now.AddDays(10));
             var artikal2 = new MlecniProizvod(123, "mleko", "TVRDO", DateTime.Now.AddDays(10));
             poslovnaJedinica.CentralniLager.DodajArtikal(artikal);
+            poslovnaJedinica.CentralniLager.UvecajStanje(artikal, 20);
             poslovnaJedinica.CentralniLager.DodajArtikal(artikal2);
+            poslovnaJedinica.CentralniLager.UvecajStanje(artikal2, 30);
             // ----------------------------------------------
             OsveziPoslovneJedinice();
             poslvneJediniceLB.SelectedIndex = 0;
@@ -107,7 +109,9 @@ namespace Prodavnica
             var artikal = new Pecivo(13, "puding", "MEKO", DateTime.Now.AddDays(10));
             var artikal2 = new VocePovrce(43, "banan", "MEKO", DateTime.Now.AddDays(10));
             prodavnica.LagerUProdavnici.DodajArtikal(artikal);
+            prodavnica.LagerUProdavnici.UvecajStanje(artikal, 3);
             prodavnica.LagerUProdavnici.DodajArtikal(artikal2);
+            prodavnica.LagerUProdavnici.UvecajStanje(artikal2, 3);
             // ----------------------------------------------
             OsveziProdavnice();
             prodavniceLB.SelectedIndex = 0;
@@ -118,6 +122,24 @@ namespace Prodavnica
             odabranaProdavnica = odabranaPoslovnaJedinica.Prodavnice[prodavniceLB.SelectedIndex];
             PrikaziRadnaMesta(odabranaProdavnica.RadnaMesta, zaposleniProdavnicaLV);
             OsveziLager(odabranaProdavnica.LagerUProdavnici, lagerProdavnicaLB);
+        }
+
+        private void centralniLagerLB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string linija = centralniLagerLB.Items[centralniLagerLB.SelectedIndex] as string;
+            string ime = linija.Split(':')[0];
+            //kolicinaZaPorucivanje.Maximum = odabranaPoslovnaJedinica.CentralniLager.SviArtikli[ime];
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (odabranaProdavnica != null)
+            {
+                var odabraniProizvod = centralniLagerLB.Items[centralniLagerLB.SelectedIndex] as Artikal;
+                int kolicina = (int)kolicinaZaPorucivanje.Value;
+                odabranaPoslovnaJedinica.CentralniLager.UmanjiStanje(odabraniProizvod, kolicina);
+                odabranaProdavnica.LagerUProdavnici.UvecajStanje(odabraniProizvod, kolicina);
+            }
         }
     }
 }

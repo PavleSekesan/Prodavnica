@@ -81,5 +81,10 @@ namespace Prodavnica
         {
             get => rokTrajanja;
         }
+
+        public override string ToString()
+        {
+            return naziv;
+        }
     }
 }
