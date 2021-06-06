@@ -7,53 +7,73 @@ namespace Prodavnica
 {
     public class Lager
     {
-        private Dictionary<Artikal,int> artikalKolicina;
+        private Dictionary<string,int> artikalKolicina;
+        private List<Artikal> artikli;
      
-        public Dictionary<Artikal, int> SviArtikli
+        public List<Artikal> SviArtikli
+        {
+            get => artikli;
+        }
+        public Dictionary<string, int> ArtkliKolicine
         {
             get => artikalKolicina;
         }
+        public List<Artikal> PronadjiArtikle(string naziv, int kolicina)
+        {
+            List<Artikal> rezultat = new List<Artikal>();
+            for (int i = 0; i < artikli.Count && rezultat.Count < kolicina; i++)
+            {
+                if (artikli[i].Naziv == naziv)
+                {
+                    rezultat.Add(artikli[i]);
+                }
+            }
+            if (rezultat.Count < kolicina)
+                throw new Exception("Nema dovoljno trazenog artikla");
+            return rezultat;
+        }
         public void DodajArtikal(Artikal artikal)
         {
-            if (artikalKolicina.ContainsKey(artikal))
+            if (artikalKolicina.ContainsKey(artikal.Naziv))
                 throw new Exception("Artikal vec postoji");
             else
-                artikalKolicina[artikal] = 0;
+                artikalKolicina[artikal.Naziv] = 0;
         }
 
-        public void DodajGrupuArtikala(List<Artikal> artikli)
+        public void DodajNaStanje(List<Artikal> artikli)
         {
             foreach(Artikal a in artikli)
             {
-                artikalKolicina[a] = 0;
+                DodajNaStanje(a);
             }
         }
-        public void UmanjiStanje(Artikal artikal, int promena = 1)
+        public void SkiniSaStanja(List<Artikal> artikli)
         {
-            if (artikalKolicina[artikal] < promena)
+            foreach (Artikal a in artikli)
             {
-                throw new Exception("Kolicina datog artikla je manja nego trazena kolicina");
+                SkiniSaStanja(a);
             }
-            artikalKolicina[artikal] -= promena;
         }
-        public void UvecajStanje(Artikal artikal, int promena = 1)
+        public void SkiniSaStanja(Artikal artikal)
         {
-            if (!artikalKolicina.ContainsKey(artikal))
+            if (artikalKolicina[artikal.Naziv] < 1)
+            {
+                throw new Exception("Trazeni artikal ne postoji u lageru");
+            }
+            artikalKolicina[artikal.Naziv]--;
+            artikli.Remove(artikal);
+        }
+        public void DodajNaStanje(Artikal artikal)
+        {
+            if (!artikalKolicina.ContainsKey(artikal.Naziv))
                 DodajArtikal(artikal);
-            artikalKolicina[artikal] += promena;
+            artikalKolicina[artikal.Naziv]++;
+            artikli.Add(artikal);
         }
         public Lager()
         {
-            artikalKolicina = new Dictionary<Artikal, int>();
-        }
-        public List<string> ToStringList()
-        {
-            List<string> sviArtikli = new List<string>();
-            foreach (var artikal in artikalKolicina)
-            {
-                sviArtikli.Add(artikal.Key + ": " + artikal.Value);
-            }
-            return sviArtikli;
+            artikalKolicina = new Dictionary<string, int>();
+            artikli = new List<Artikal>();
         }
     }
 }

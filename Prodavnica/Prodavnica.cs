@@ -23,6 +23,10 @@ namespace Prodavnica
         {
             get => radnaMesta;
         }
+        public List<Radnik> Zaposleni
+        {
+            get => radnaMesta.Where(x => !x.JePrazno).Select(x => x.RadnikNaMestu).ToList();
+        }
         /*
          
          6. Prodavnica se mogu podeliti na sledeće: 
@@ -67,6 +71,7 @@ namespace Prodavnica
             this.povrsina = povrsina;
             lager = new Lager();
             proizvodiVanPonude = new List<Type>();
+            radnaMesta = new List<RadnoMesto>();
         }
         public bool ImaMesto(Radnik radnik)
         {
@@ -94,7 +99,16 @@ namespace Prodavnica
         {
             foreach (var artikal in lager.SviArtikli)
             {
-                poslovnaJedinica.CentralniLager.UvecajStanje(artikal.Key, artikal.Value);
+                poslovnaJedinica.CentralniLager.DodajNaStanje(artikal);
+            }
+        }
+        public void ProveriArtikle()
+        {
+            var zaUklanjanje = lager.SviArtikli.Where(x => x.IstekaoRok());
+            foreach (var pokvareniArtikal in zaUklanjanje)
+            {
+                lager.SkiniSaStanja(pokvareniArtikal);
+                poslovnaJedinica.CentralniLager.DodajNaStanje(pokvareniArtikal);
             }
         }
 

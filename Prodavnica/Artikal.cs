@@ -36,6 +36,11 @@ namespace Prodavnica
                 return false;
         }
 
+        public bool IstekaoRok()
+        {
+            return DateTime.Now.CompareTo(rokTrajanja) >= 0;
+        }
+
         public double Popust
         {
             get => popust;

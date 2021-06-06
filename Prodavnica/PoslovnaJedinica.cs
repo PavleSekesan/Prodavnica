@@ -72,10 +72,25 @@ namespace Prodavnica
         }
         public void OtvoriProdavnicu(double povrsina, string adresa)
         {
-            var novaProdavnica = new Prodavnica(povrsina, adresa, this);
+            var novaProdavnica = ProdavnicaFactory.NovaProdavnica(povrsina, adresa, this);
             prodavnice.Add(novaProdavnica);
         }
-
+        public void ZatvoriProdavnicu(int index)
+        {
+            var zaRasporedjivanje = prodavnice[index].Zaposleni;
+            prodavnice[index].ZatvoriProdavnicu();
+            prodavnice.RemoveAt(index);
+            foreach (var prodavnica in prodavnice)
+            {
+                foreach (var zaposleni in zaRasporedjivanje)
+                {
+                    if (prodavnica.ImaMesto(zaposleni))
+                    {
+                        prodavnica.ZaposliRadnika(zaposleni);
+                    }
+                }
+            }
+        }
         public override string ToString()
         {
             return grad;

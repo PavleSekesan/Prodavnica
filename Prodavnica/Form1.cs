@@ -57,6 +57,7 @@ namespace Prodavnica
             {
                 poslvneJediniceLB.Items.Add(poslovnaJedinica);
             }
+            odabranaPoslovnaJedinica = null;
         }
         private void OsveziProdavnice()
         {
@@ -65,13 +66,24 @@ namespace Prodavnica
             {
                 prodavniceLB.Items.Add(prodavnica);
             }
+            odabranaProdavnica = null;
         }
-        private void OsveziLager(Lager lager, ListBox lb)
+        private void OsveziLager(Lager lager, ListView lv)
         {
-            lb.Items.Clear();
-            foreach (var artikal in lager.ToStringList())
+            lv.Columns.Clear();
+            lv.Items.Clear();
+
+            lv.Columns.Add("Naziv");
+            lv.Columns.Add("Kolicina");
+
+            foreach (var kvp in lager.ArtkliKolicine)
             {
-                lb.Items.Add(artikal);
+                var row = new ListViewItem(new string[] { kvp.Key.ToString(), kvp.Value.ToString() });
+                lv.Items.Add(row);
+            }
+            for (int i = 0; i < lv.Columns.Count; i++)
+            {
+                lv.Columns[i].Width = -2;
             }
         }
 
@@ -79,40 +91,54 @@ namespace Prodavnica
         {
             odabranaPoslovnaJedinica = kompanija.PoslovneJedinice[poslvneJediniceLB.SelectedIndex];
             PrikaziRadnaMesta(odabranaPoslovnaJedinica.RadnaMesta, zaposleniPoslovnaJedinicaLV);
-            OsveziLager(odabranaPoslovnaJedinica.CentralniLager, centralniLagerLB);
+            OsveziLager(odabranaPoslovnaJedinica.CentralniLager, centralniLagerLV);
             OsveziProdavnice();
             zaposleniProdavnicaLV.Items.Clear();
-            lagerProdavnicaLB.Items.Clear();
+            lagerProdavnicaLV.Items.Clear();
         }
 
         private void dodajPoslovnuJedinicu_Click(object sender, EventArgs e)
         {
-            kompanija.OtvoriPoslovnuJedinicu("kyrcojaj");
-            // temp code ------------------------------------- 
+            kompanija.OtvoriPoslovnuJedinicu("Beograd");
+
             var poslovnaJedinica  = kompanija.PoslovneJedinice.Last();
-            var artikal = new ZaledjeniProgram(2345, "jaje", "TVRDO", DateTime.Now.AddDays(10));
-            var artikal2 = new MlecniProizvod(123, "mleko", "TVRDO", DateTime.Now.AddDays(10));
+            var artikal = new ZaledjeniProgram(179.99, "Kokosija jaja 10/1", "karton", "kom", DateTime.Now.AddDays(10));
+            var artikal2 = new MlecniProizvod(89.99, "Jogurt 2.8%mm Moja kravica 1kg TT", "tetrapak", "kom", DateTime.Now.AddDays(10));
             poslovnaJedinica.CentralniLager.DodajArtikal(artikal);
-            poslovnaJedinica.CentralniLager.UvecajStanje(artikal, 20);
+            for (int i = 0; i < 20; i++)
+            {
+                poslovnaJedinica.CentralniLager.DodajNaStanje(artikal);
+            }
+
             poslovnaJedinica.CentralniLager.DodajArtikal(artikal2);
-            poslovnaJedinica.CentralniLager.UvecajStanje(artikal2, 30);
-            // ----------------------------------------------
+            for (int i = 0; i < 30; i++)
+            {
+                poslovnaJedinica.CentralniLager.DodajNaStanje(artikal2);
+            }
+
             OsveziPoslovneJedinice();
             poslvneJediniceLB.SelectedIndex = 0;
         }
 
         private void dodajProdavnicu_Click(object sender, EventArgs e)
         {
-            odabranaPoslovnaJedinica.OtvoriProdavnicu(420, "kyrcojaja");
-            // temp code ------------------------------------- 
+            odabranaPoslovnaJedinica.OtvoriProdavnicu(320, "Palmira Toljatija 5");
+
             var prodavnica = odabranaPoslovnaJedinica.Prodavnice.Last();
-            var artikal = new Pecivo(13, "puding", "MEKO", DateTime.Now.AddDays(10));
-            var artikal2 = new VocePovrce(43, "banan", "MEKO", DateTime.Now.AddDays(10));
+            var artikal = new Pecivo(299.99, "Sampon H&S Menthol 225ml", "PET", "kom", DateTime.Now.AddYears(10));
+            var artikal2 = new VocePovrce(84.99, "Biskvit Jaffa 150g", "karton", "kom", DateTime.Now.AddDays(30));
             prodavnica.LagerUProdavnici.DodajArtikal(artikal);
-            prodavnica.LagerUProdavnici.UvecajStanje(artikal, 3);
+            for (int i = 0; i < 20; i++)
+            {
+                prodavnica.LagerUProdavnici.DodajNaStanje(artikal);
+            }
+
             prodavnica.LagerUProdavnici.DodajArtikal(artikal2);
-            prodavnica.LagerUProdavnici.UvecajStanje(artikal2, 3);
-            // ----------------------------------------------
+            for (int i = 0; i < 30; i++)
+            {
+                prodavnica.LagerUProdavnici.DodajNaStanje(artikal2);
+            }
+
             OsveziProdavnice();
             prodavniceLB.SelectedIndex = 0;
         }
@@ -121,24 +147,47 @@ namespace Prodavnica
         {
             odabranaProdavnica = odabranaPoslovnaJedinica.Prodavnice[prodavniceLB.SelectedIndex];
             PrikaziRadnaMesta(odabranaProdavnica.RadnaMesta, zaposleniProdavnicaLV);
-            OsveziLager(odabranaProdavnica.LagerUProdavnici, lagerProdavnicaLB);
-        }
-
-        private void centralniLagerLB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string linija = centralniLagerLB.Items[centralniLagerLB.SelectedIndex] as string;
-            string ime = linija.Split(':')[0];
-            //kolicinaZaPorucivanje.Maximum = odabranaPoslovnaJedinica.CentralniLager.SviArtikli[ime];
+            OsveziLager(odabranaProdavnica.LagerUProdavnici, lagerProdavnicaLV);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (odabranaProdavnica != null)
             {
-                var odabraniProizvod = centralniLagerLB.Items[centralniLagerLB.SelectedIndex] as Artikal;
+                string naziv = centralniLagerLV.SelectedItems[0].SubItems[0].Text;
                 int kolicina = (int)kolicinaZaPorucivanje.Value;
-                odabranaPoslovnaJedinica.CentralniLager.UmanjiStanje(odabraniProizvod, kolicina);
-                odabranaProdavnica.LagerUProdavnici.UvecajStanje(odabraniProizvod, kolicina);
+
+                var p = odabranaPoslovnaJedinica.CentralniLager.PronadjiArtikle(naziv, kolicina);
+                odabranaPoslovnaJedinica.CentralniLager.SkiniSaStanja(p);
+                odabranaProdavnica.LagerUProdavnici.DodajNaStanje(p);
+                OsveziLager(odabranaProdavnica.LagerUProdavnici, lagerProdavnicaLV);
+                OsveziLager(odabranaPoslovnaJedinica.CentralniLager, centralniLagerLV);
+            }
+        }
+
+        private void centralniLagerLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (centralniLagerLV.SelectedItems.Count > 0)
+            {
+                string naziv = centralniLagerLV.SelectedItems[0].SubItems[0].Text;
+                kolicinaZaPorucivanje.Maximum = odabranaPoslovnaJedinica.CentralniLager.ArtkliKolicine[naziv];
+            }
+            else
+            {
+                kolicinaZaPorucivanje.Maximum = 0;
+                kolicinaZaPorucivanje.Value = 0;
+            }
+        }
+
+        private void zatovriProdavnicu_Click(object sender, EventArgs e)
+        {
+            if (odabranaPoslovnaJedinica != null && odabranaPoslovnaJedinica.Prodavnice.Count > 0)
+            {
+                int index = prodavniceLB.SelectedIndex;
+                odabranaPoslovnaJedinica.ZatvoriProdavnicu(index);
+                OsveziProdavnice();
+                lagerProdavnicaLV.Items.Clear();
+                zaposleniProdavnicaLV.Items.Clear();
             }
         }
     }

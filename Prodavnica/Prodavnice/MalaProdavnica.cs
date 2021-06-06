@@ -7,7 +7,7 @@ namespace Prodavnica
 {
     public class MalaProdavnica : Prodavnica
     {
-        public MalaProdavnica(double povrsina, string adresa) : base(povrsina, adresa)
+        public MalaProdavnica(double povrsina, string adresa, PoslovnaJedinica poslovnaJedinica) : base(povrsina, adresa, poslovnaJedinica)
         {
             proizvodiVanPonude = new List<Type>() { typeof(SvezeMeso), typeof(MesnePreradjevine), typeof(Pecivo) };
 

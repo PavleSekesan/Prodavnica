@@ -7,7 +7,7 @@ namespace Prodavnica
 {
     public class VelikaProdavnica : Prodavnica
     {
-        public VelikaProdavnica(double povrsina, string adresa) : base(povrsina, adresa)
+        public VelikaProdavnica(double povrsina, string adresa, PoslovnaJedinica poslovnaJedinica) : base(povrsina, adresa, poslovnaJedinica)
         {
             var radnaMestaSrednjeProdavnice = new List<RadnoMesto>();
             DodajRadnaMesta(new Dictionary<Type, int>(){

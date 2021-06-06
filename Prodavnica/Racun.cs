@@ -58,7 +58,7 @@ namespace Prodavnica
         {
             foreach (var artikal in artikli)
             {
-                prodavnica.LagerUProdavnici.UmanjiStanje(artikal);
+                prodavnica.LagerUProdavnici.SkiniSaStanja(artikal);
             }
             datum = DateTime.Now;
         }
