@@ -46,6 +46,10 @@ namespace Prodavnica
             this.zaposleniKompanijaLV = new System.Windows.Forms.ListView();
             this.zaposleniPoslovnaJedinicaLV = new System.Windows.Forms.ListView();
             this.zaposleniProdavnicaLV = new System.Windows.Forms.ListView();
+            this.kolicinaZaPorucivanje = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.kolicinaZaPorucivanje)).BeginInit();
             this.SuspendLayout();
             // 
             // poslvneJediniceLB
@@ -100,6 +104,7 @@ namespace Prodavnica
             this.centralniLagerLB.Name = "centralniLagerLB";
             this.centralniLagerLB.Size = new System.Drawing.Size(391, 173);
             this.centralniLagerLB.TabIndex = 6;
+            this.centralniLagerLB.SelectedIndexChanged += new System.EventHandler(this.centralniLagerLB_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -204,11 +209,40 @@ namespace Prodavnica
             this.zaposleniProdavnicaLV.UseCompatibleStateImageBehavior = false;
             this.zaposleniProdavnicaLV.View = System.Windows.Forms.View.Details;
             // 
+            // kolicinaZaPorucivanje
+            // 
+            this.kolicinaZaPorucivanje.Location = new System.Drawing.Point(1188, 270);
+            this.kolicinaZaPorucivanje.Name = "kolicinaZaPorucivanje";
+            this.kolicinaZaPorucivanje.Size = new System.Drawing.Size(120, 20);
+            this.kolicinaZaPorucivanje.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1185, 249);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 13);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Porucivanje";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1188, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Poruci";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1446, 696);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.kolicinaZaPorucivanje);
             this.Controls.Add(this.zaposleniProdavnicaLV);
             this.Controls.Add(this.zaposleniPoslovnaJedinicaLV);
             this.Controls.Add(this.zaposleniKompanijaLV);
@@ -229,6 +263,7 @@ namespace Prodavnica
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.kolicinaZaPorucivanje)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,6 +288,9 @@ namespace Prodavnica
         private System.Windows.Forms.ListView zaposleniKompanijaLV;
         private System.Windows.Forms.ListView zaposleniPoslovnaJedinicaLV;
         private System.Windows.Forms.ListView zaposleniProdavnicaLV;
+        private System.Windows.Forms.NumericUpDown kolicinaZaPorucivanje;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
     }
 }
 

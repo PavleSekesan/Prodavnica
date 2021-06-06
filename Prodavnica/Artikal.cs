@@ -68,5 +68,10 @@ namespace Prodavnica
             {
             }
         }
+
+        public override string ToString()
+        {
+            return naziv;
+        }
     }
 }
