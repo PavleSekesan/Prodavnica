@@ -31,5 +31,15 @@ namespace Prodavnica
             this.ulogaRadnika = ulogaRadnika;
             this.radnik = radnik;
         }
+        public List<string> ToStringList()
+        {
+            if (radnik == null)
+            {
+                string tip = ulogaRadnika.ToString().Split('.').Last();
+                return new List<string>() { tip, "", "" };
+            }
+            else
+                return radnik.ToStringList();
+        }
     }
 }

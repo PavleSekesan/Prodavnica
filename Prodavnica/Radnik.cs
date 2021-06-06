@@ -27,9 +27,10 @@ namespace Prodavnica
             this.ime = ime;
             this.prezime = prezime;
         }
-        public override string ToString()
+        public List<string> ToStringList()
         {
-            return ime + " " + prezime;
+            string tip = this.GetType().ToString().Split('.').Last();
+            return new List<string>(){ tip,ime,prezime };
         }
     }
 }

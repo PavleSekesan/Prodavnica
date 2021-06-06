@@ -7,15 +7,21 @@ namespace Prodavnica
 {
     public class Prodavnica
     {
+        protected PoslovnaJedinica poslovnaJedinica;
         protected string adresa;
         protected double povrsina;
         protected List<Type> proizvodiVanPonude;
         protected List<RadnoMesto> radnaMesta;
         protected List<Kasa> kase;
         protected Lager lager;
+
         public Lager LagerUProdavnici
         {
             get => lager;
+        }
+        public List<RadnoMesto> RadnaMesta
+        {
+            get => radnaMesta;
         }
         /*
          
@@ -54,8 +60,9 @@ namespace Prodavnica
             for (int i = 0; i < brojKasa; i++)
                 kase.Add(new Kasa(this));
         }
-        public Prodavnica(double povrsina, string adresa)
+        public Prodavnica(double povrsina, string adresa, PoslovnaJedinica poslovnaJedinica)
         {
+            this.poslovnaJedinica = poslovnaJedinica;
             this.adresa = adresa;
             this.povrsina = povrsina;
             lager = new Lager();
@@ -85,7 +92,10 @@ namespace Prodavnica
         }
         public void ZatvoriProdavnicu()
         {
-            throw new NotImplementedException();
+            foreach (var artikal in lager.SviArtikli)
+            {
+                poslovnaJedinica.CentralniLager.UvecajStanje(artikal.Key, artikal.Value);
+            }
         }
 
         public override string ToString()
